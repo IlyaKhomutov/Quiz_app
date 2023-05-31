@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content %}
+<center><p> You've already tried to pass this test!</p>
+    <p>Your score is {{obj.score}}%</p>
+    <p>
+        <a href="{% url 'quizzes:main-view' %}" class="btn btn-secondary">Main Page</a>
+    </p></center>
+
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends "base2.html" %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+
+<div class="main_result_container">
+{% for obj in object_list %}
+    <div class="result">
+        <p>{{obj.name}} - {{obj.topic}}</p>
+
+        {% for result in obj.result_set.all %}
+        <div class="result_container">
+            <a class="result_user">{{result.user.first_name}} {{result.user.last_name}} ({{result.user}})</a>
+            <div class="result_score">{{result.score}}</div>
+        </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock content %}
+
+</div>
+</body>
+</html>
